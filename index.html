@@ -918,7 +918,94 @@
                             <p>Export Manager, Tokyo Manufacturing</p>
                         </div>
                     </div>
+                </div>            
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>15,000+</h3>
+                        <p>Verified Companies</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>89%</h3>
+                        <p>Partnership Success Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$500M+</h3>
+                        <p>In Partnerships Created</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>45</h3>
+                        <p>Countries Connected</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Next Partnership?</h2>
+            <p>Join thousands of companies already connecting through Partnex</p>
+            <button class="cta-main">Start Your 14-Day Free Trial</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Partnex.net</h3>
+                    <p>Transforming business connections into lasting partnerships between Asian producers and European markets.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>For Producers</h3>
+                    <p>Find European distributors<br>
+                    Expand your market reach<br>
+                    Build trusted relationships</p>
+                </div>
+                <div class="footer-section">
+                    <h3>For Buyers</h3>
+                    <p>Discover verified suppliers<br>
+                    Access quality products<br>
+                    Secure partnerships</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p>Help Center<br>
+                    Contact Us<br>
+                    API Documentation</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Partnex.net - From Connection to Partnership</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card, .pricing-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
   
     <!-- Footer -->
     <footer class="footer">
