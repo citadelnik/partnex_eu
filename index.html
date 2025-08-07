@@ -1,10 +1,11 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Partnex — Trusted B2B Gateway to Europe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #1a3c34;
@@ -16,47 +17,36 @@
       --highlight: #e9f7f3;
       --radius: 16px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--background);
       color: var(--text);
       line-height: 1.6;
     }
-
     header {
       background: linear-gradient(135deg, var(--primary), #084c45);
       color: white;
       text-align: center;
       padding: 6rem 2rem 4rem;
     }
-
     header h1 {
       font-size: 3.2rem;
       font-weight: 700;
       max-width: 900px;
       margin: 0 auto 1rem;
     }
-
     header p {
       font-size: 1.4rem;
       color: #ccece5;
       max-width: 720px;
       margin: 0 auto;
     }
-
     .container {
       max-width: 1140px;
       margin: 0 auto;
       padding: 3rem 2rem;
     }
-
     .section {
       background: var(--card);
       border-radius: var(--radius);
@@ -64,20 +54,17 @@
       margin: 3rem 0;
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.05);
     }
-
     .section h2 {
       font-size: 2.4rem;
       color: var(--primary);
       margin-bottom: 2rem;
       text-align: center;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
     }
-
     .card {
       background: var(--highlight);
       padding: 2rem;
@@ -85,27 +72,14 @@
       text-align: center;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     }
-
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
+    .card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .card p { color: var(--muted); font-size: 1rem; }
     ul, ol {
       margin-left: 1.5rem;
       font-size: 1.1rem;
       color: var(--text);
     }
-
-    ul li, ol li {
-      margin-bottom: 1rem;
-    }
-
+    ul li, ol li { margin-bottom: 1rem; }
     .cta {
       background: var(--accent);
       color: white;
@@ -114,17 +88,8 @@
       border-radius: var(--radius);
       margin-top: 4rem;
     }
-
-    .cta h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .cta p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
+    .cta h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+    .cta p { font-size: 1.2rem; margin-bottom: 2rem; }
     .cta button {
       background: white;
       color: var(--primary);
@@ -135,18 +100,13 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
-
-    .cta button:hover {
-      background: #d2f2ec;
-    }
-
+    .cta button:hover { background: #d2f2ec; }
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.95rem;
       color: var(--muted);
     }
-
     .highlight-banner {
       background: #e2f7f2;
       padding: 2rem;
@@ -154,16 +114,32 @@
       border-radius: var(--radius);
       margin: 2rem 0;
     }
-
     .highlight-banner h3 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       color: var(--primary);
     }
-
     .highlight-banner p {
       font-size: 1.1rem;
       color: var(--muted);
+    }
+    .video-section, .infographic-section {
+      margin: 4rem auto;
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 860px;
+      height: 480px;
+      border: none;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    .infographic-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -174,6 +150,11 @@
   </header>
 
   <main class="container">
+    <section class="video-section">
+      <h2>🎥 Watch How Partnex Works</h2>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </section>
+
     <section class="highlight-banner">
       <h3>🚀 Go to Market 5× Faster</h3>
       <p>Onboard, verify, and connect — all in under a week.</p>
@@ -266,6 +247,11 @@
         <li>📣 Featured listing in marketplace</li>
         <li>👤 Dedicated manager support (30 days)</li>
       </ul>
+    </section>
+
+    <section class="infographic-section">
+      <h2>📊 Time & Risk Reduction with Partnex</h2>
+      <img src="https://via.placeholder.com/960x540.png?text=Time+%26+Risk+Infographic" alt="Infographic showing time savings and risk reduction with Partnex">
     </section>
 
     <div class="cta">
