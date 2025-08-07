@@ -1,145 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partnex B2B Platform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partnex — Trusted B2B Gateway to Europe</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    :root {
+      --primary: #1a3c34;
+      --accent: #00bfa6;
+      --background: #f2f4f7;
+      --card: #ffffff;
+      --text: #1c1e21;
+      --muted: #6b7280;
+      --highlight: #e9f7f3;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f4f4f8;
-      color: #1f1f1f;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-      background: #001f3f;
+      background: linear-gradient(135deg, var(--primary), #084c45);
       color: white;
-      padding: 3rem 1rem;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      max-width: 900px;
+      margin: 0 auto 1rem;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      color: #ccece5;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 4rem 3rem;
+      margin: 3rem 0;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h2 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
       text-align: center;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
     }
-    header p {
-      font-size: 1.25rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .section {
-      background: white;
+
+    .card {
+      background: var(--highlight);
       padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     }
-    .section h2 {
-      color: #003366;
-      margin-bottom: 1rem;
-    }
-    .benefits li, .features li, .audience li {
+
+    .card h3 {
+      font-size: 1.4rem;
       margin-bottom: 0.75rem;
     }
-    .cta {
-      text-align: center;
-      margin-top: 2rem;
+
+    .card p {
+      color: var(--muted);
+      font-size: 1rem;
     }
-    .cta button {
-      padding: 1rem 2rem;
+
+    ul, ol {
+      margin-left: 1.5rem;
       font-size: 1.1rem;
-      background: #0070f3;
+      color: var(--text);
+    }
+
+    ul li, ol li {
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      background: var(--accent);
       color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: var(--radius);
+      margin-top: 4rem;
+    }
+
+    .cta h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta button {
+      background: white;
+      color: var(--primary);
+      font-size: 1.2rem;
+      padding: 1rem 2.5rem;
       border: none;
-      border-radius: 8px;
+      border-radius: var(--radius);
       cursor: pointer;
+      transition: background 0.3s ease;
     }
+
     .cta button:hover {
-      background: #005bb5;
+      background: #d2f2ec;
     }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #eee;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .highlight-banner {
+      background: #e2f7f2;
+      padding: 2rem;
+      text-align: center;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+    }
+
+    .highlight-banner h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .highlight-banner p {
+      font-size: 1.1rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Expand to Europe with Trust and Speed</h1>
-    <p>Partnex.net — Your Gateway to Sustainable B2B Deals in Europe</p>
+    <h1>Your Trusted Gateway to European Trade</h1>
+    <p>Partnex.net connects global suppliers with verified European buyers through trust, compliance, and speed.</p>
   </header>
 
   <main class="container">
+    <section class="highlight-banner">
+      <h3>🚀 Go to Market 5× Faster</h3>
+      <p>Onboard, verify, and connect — all in under a week.</p>
+    </section>
+
     <section class="section">
-      <h2>Who is Partnex for?</h2>
-      <ul class="audience">
-        <li>SMEs: Manufacturers, suppliers, tech firms from anywhere in the world</li>
-        <li>Those with reliable, certified, and EU-compliant products</li>
-        <li>Firms aiming to land European contracts efficiently</li>
-      </ul>
+      <h2>Who is Partnex For?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🌎 Global SMEs & Exporters</h3>
+          <p>Companies aiming to grow in Europe with certified, reliable products.</p>
+        </div>
+        <div class="card">
+          <h3>🚀 Tech Providers</h3>
+          <p>Innovators offering software, hardware or smart systems for enterprise clients.</p>
+        </div>
+        <div class="card">
+          <h3>📦 Manufacturers & Factories</h3>
+          <p>Production-focused businesses with scalable supply and quality processes.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <h2>Why Choose Partnex?</h2>
-      <ul class="benefits">
-        <li>✔️ Digital Verification (KYB, ESG, Cybersecurity)</li>
-        <li>✔️ Trusted Supplier Status Badge</li>
-        <li>✔️ Secure B2B Marketplace Presence</li>
-        <li>✔️ Direct Leads from Verified EU Buyers</li>
-        <li>✔️ In-platform Contracts & Logistics Tools</li>
-      </ul>
+      <div class="grid">
+        <div class="card">
+          <h3>✅ End-to-End Compliance</h3>
+          <p>Pass KYB, ESG and cybersecurity once — visible to all EU buyers.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Instant Buyer Access</h3>
+          <p>Join a network of procurement officers & verified corporate buyers.</p>
+        </div>
+        <div class="card">
+          <h3>🧠 Smart AI Matching</h3>
+          <p>Be discovered by the right buyers, automatically.</p>
+        </div>
+        <div class="card">
+          <h3>🔐 Dealroom & Docs</h3>
+          <p>Negotiate, sign and store everything in one secure space.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <h2>What You Get</h2>
-      <ul class="features">
-        <li>🛡️ Digital Trust Passport: Proof of EU readiness</li>
-        <li>📽️ Rich Company Profile: Videos, photos, certifications, portfolio</li>
-        <li>🤖 AI Buyer Matching: Receive relevant requests from EU companies</li>
-        <li>🔒 Secure Deal Rooms: Safe space for negotiation & agreement</li>
-        <li>📦 Trade Console: Logistics, insurance, smart contracts & financing</li>
-      </ul>
+      <h2>Your Benefits</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🛡️ Digital Trust Passport</h3>
+          <p>Show EU buyers that you're verified and reliable.</p>
+        </div>
+        <div class="card">
+          <h3>🎬 Multimedia Profiles</h3>
+          <p>Photos, video, and certifications to build confidence instantly.</p>
+        </div>
+        <div class="card">
+          <h3>🔍 AI-Based Buyer Matching</h3>
+          <p>Only receive leads that match your capabilities and goals.</p>
+        </div>
+        <div class="card">
+          <h3>💬 Secure Deal Rooms</h3>
+          <p>Negotiate and close in a safe, encrypted environment.</p>
+        </div>
+        <div class="card">
+          <h3>📦 Trade Console</h3>
+          <p>Logistics, contracts, payments, and financing in one dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight-banner">
+      <h3>🌍 Built for Cross-Border Success</h3>
+      <p>No EU office required. Partnex gives you visibility where it matters.</p>
     </section>
 
     <section class="section">
-      <h2>Why European Buyers Trust Partnex Suppliers</h2>
-      <p>European corporations face increasing ESG and compliance requirements. With Partnex, they gain immediate confidence that your company meets EU standards — reducing procurement risks and shortening deal cycles.</p>
-    </section>
-
-    <section class="section">
-      <h2>How to Get Started</h2>
+      <h2>How to Start</h2>
       <ol>
-        <li>Sign up and fill out your basic profile (takes 10 minutes)</li>
-        <li>Complete online verification (KYB, certifications, ESG)</li>
-        <li>Earn Trusted Supplier status and start receiving offers</li>
+        <li>Sign up and complete a 10-minute onboarding profile</li>
+        <li>Submit certifications and pass KYB/ESG screening</li>
+        <li>Go live as a Trusted Supplier and start closing deals</li>
       </ol>
     </section>
 
     <section class="section">
-      <h2>Limited-Time Bonus for Early Adopters</h2>
+      <h2>🎁 Early Access Benefits</h2>
       <ul>
-        <li>🎁 Free Starter Verification Package</li>
-        <li>🚀 Enhanced Marketplace Visibility</li>
-        <li>👨‍💼 Personal Success Manager for 30 Days</li>
+        <li>🎉 Free onboarding verification package</li>
+        <li>📣 Featured listing in marketplace</li>
+        <li>👤 Dedicated manager support (30 days)</li>
       </ul>
     </section>
 
     <div class="cta">
-      <h2>Join the B2B Trust Movement</h2>
-      <p>Be among the first to shape the future of B2B trade in Europe.</p>
-      <button onclick="window.location.href='https://forms.gle/your-google-form-link'">Book an Interview</button>
+      <h2>Book a Call to Join Early Access</h2>
+      <p>Help shape Partnex with your feedback and secure your spot before launch.</p>
+      <button onclick="window.location.href='https://forms.gle/your-google-form-link'">Book Interview</button>
     </div>
   </main>
 
   <footer>
-    &copy; 2025 Partnex. All rights reserved.
+    &copy; 2025 Partnex. Connecting verified suppliers to Europe — securely, sustainably, and smartly.
   </footer>
 </body>
 </html>
