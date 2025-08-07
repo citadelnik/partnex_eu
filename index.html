@@ -1,268 +1,1127 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partnex — Trusted B2B Gateway to Europe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #1a3c34;
-      --accent: #00bfa6;
-      --background: #f2f4f7;
-      --card: #ffffff;
-      --text: #1c1e21;
-      --muted: #6b7280;
-      --highlight: #e9f7f3;
-      --radius: 16px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, var(--primary), #084c45);
-      color: white;
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-    }
-    header h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      max-width: 900px;
-      margin: 0 auto 1rem;
-    }
-    header p {
-      font-size: 1.4rem;
-      color: #ccece5;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .section {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 4rem 3rem;
-      margin: 3rem 0;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.05);
-    }
-    .section h2 {
-      font-size: 2.4rem;
-      color: var(--primary);
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-    }
-    .card {
-      background: var(--highlight);
-      padding: 2rem;
-      border-radius: var(--radius);
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-    }
-    .card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
-    .card p { color: var(--muted); font-size: 1rem; }
-    ul, ol {
-      margin-left: 1.5rem;
-      font-size: 1.1rem;
-      color: var(--text);
-    }
-    ul li, ol li { margin-bottom: 1rem; }
-    .cta {
-      background: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-      border-radius: var(--radius);
-      margin-top: 4rem;
-    }
-    .cta h2 { font-size: 2.4rem; margin-bottom: 1rem; }
-    .cta p { font-size: 1.2rem; margin-bottom: 2rem; }
-    .cta button {
-      background: white;
-      color: var(--primary);
-      font-size: 1.2rem;
-      padding: 1rem 2.5rem;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .cta button:hover { background: #d2f2ec; }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-    .highlight-banner {
-      background: #e2f7f2;
-      padding: 2rem;
-      text-align: center;
-      border-radius: var(--radius);
-      margin: 2rem 0;
-    }
-    .highlight-banner h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-    .highlight-banner p {
-      font-size: 1.1rem;
-      color: var(--muted);
-    }
-    .video-section, .infographic-section {
-      margin: 4rem auto;
-      text-align: center;
-    }
-    .video-section iframe {
-      width: 100%;
-      max-width: 860px;
-      height: 480px;
-      border: none;
-      border-radius: var(--radius);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    }
-    .infographic-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Market Entry Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 18px 35px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInRight 1s ease-out 0.3s both;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #333, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Challenges Section */
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .challenge-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .challenge-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .challenge-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .challenge-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Companies Section */
+        .companies-section {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            position: relative;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .company-category {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .company-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Interview Section */
+        .interview-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+        }
+
+        .interview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .interview-features {
+            list-style: none;
+        }
+
+        .interview-features li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .interview-features li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #f8f9ff, #fff);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f8f9ff;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            color: #666;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: white;
+            padding: 0 8px;
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label,
+        .form-select:focus + .form-label,
+        .form-textarea:focus + .form-label {
+            top: 0;
+            font-size: 0.85rem;
+            color: #667eea;
+        }
+
+        .form-textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interview-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 40px 30px;
+                margin: 0 20px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Your Trusted Gateway to European Trade</h1>
-    <p>Partnex.net connects global suppliers with verified European buyers through trust, compliance, and speed.</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <nav class="nav container">
+            <div class="logo">EuroMarket Research</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#companies">Companies</a></li>
+                <li><a href="#interview">Interview</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="container">
-    <section class="video-section">
-      <h2>🎥 Watch How Partnex Works</h2>
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Struggling to enter European markets?</h1>
+                    <p>Join our exclusive research study and get personalized insights to overcome market entry barriers in Europe. Share your experience in a 15-minute interview.</p>
+                    <a href="#contact" class="cta-button">
+                        📞 Schedule Interview
+                        <span>→</span>
+                    </a>
+                </div>
+                <div class="hero-visual">
+                    <div class="stats-grid floating">
+                        <div class="stat-card">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Companies Interviewed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">27</span>
+                            <span class="stat-label">EU Countries Covered</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Success Rate Improvement</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">15 min</span>
+                            <span class="stat-label">Interview Duration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="highlight-banner">
-      <h3>🚀 Go to Market 5× Faster</h3>
-      <p>Onboard, verify, and connect — all in under a week.</p>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Challenges Section -->
+        <section class="section" id="challenges">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Common Challenges We're Investigating</h2>
+                <p class="section-subtitle animate-on-scroll">Understanding the key barriers companies face when expanding into European markets</p>
+                
+                <div class="challenges-grid">
+                    <div class="challenge-card animate-on-scroll">
+                        <div class="challenge-icon">🏛️</div>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Navigating complex EU regulations, GDPR compliance, and country-specific legal requirements that vary across member states.</p>
+                    </div>
+                    <div class="challenge-card animate-on-scroll">
+                        <div class="challenge-icon">🌍</div>
+                        <h3>Cultural Adaptation</h3>
+                        <p>Understanding diverse European cultures, consumer behaviors, and adapting marketing strategies for local markets.</p>
+                    </div>
+                    <div class="challenge-card animate-on-scroll">
+                        <div class="challenge-icon">🤝</div>
+                        <h3>Local Partnerships</h3>
+                        <p>Finding reliable distribution partners, establishing supply chains, and building trust with European stakeholders.</p>
+                    </div>
+                    <div class="challenge-card animate-on-scroll">
+                        <div class="challenge-icon">💰</div>
+                        <h3>Market Entry Costs</h3>
+                        <p>Managing high upfront investments, understanding tax implications, and optimizing cost structures for profitability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="section">
-      <h2>Who is Partnex For?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🌎 Global SMEs & Exporters</h3>
-          <p>Companies aiming to grow in Europe with certified, reliable products.</p>
-        </div>
-        <div class="card">
-          <h3>🚀 Tech Providers</h3>
-          <p>Innovators offering software, hardware or smart systems for enterprise clients.</p>
-        </div>
-        <div class="card">
-          <h3>📦 Manufacturers & Factories</h3>
-          <p>Production-focused businesses with scalable supply and quality processes.</p>
-        </div>
-      </div>
-    </section>
+        <!-- Companies Section -->
+        <section class="section companies-section" id="companies">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Looking for companies in:</h2>
+                
+                <div class="companies-grid">
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">💊</div>
+                        <h3>Healthcare & Medical Devices</h3>
+                        <p>Pharmaceutical companies, medical equipment manufacturers, digital health solutions</p>
+                    </div>
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">🏭</div>
+                        <h3>Manufacturing & Industrial</h3>
+                        <p>Industrial equipment, automotive parts, machinery, and manufacturing technology</p>
+                    </div>
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">💻</div>
+                        <h3>Technology & Software</h3>
+                        <p>SaaS platforms, fintech solutions, AI/ML companies, and digital transformation tools</p>
+                    </div>
+                </div>
 
-    <section class="section">
-      <h2>Why Choose Partnex?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>✅ End-to-End Compliance</h3>
-          <p>Pass KYB, ESG and cybersecurity once — visible to all EU buyers.</p>
-        </div>
-        <div class="card">
-          <h3>🤝 Instant Buyer Access</h3>
-          <p>Join a network of procurement officers & verified corporate buyers.</p>
-        </div>
-        <div class="card">
-          <h3>🧠 Smart AI Matching</h3>
-          <p>Be discovered by the right buyers, automatically.</p>
-        </div>
-        <div class="card">
-          <h3>🔐 Dealroom & Docs</h3>
-          <p>Negotiate, sign and store everything in one secure space.</p>
-        </div>
-      </div>
-    </section>
+                <div class="companies-grid" style="margin-top: 40px;">
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">⚡</div>
+                        <h3>Energy & Sustainability</h3>
+                        <p>Renewable energy, clean technology, environmental solutions, and green innovation</p>
+                    </div>
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">📱</div>
+                        <h3>Consumer Electronics</h3>
+                        <p>Smart devices, IoT products, consumer technology, and innovative hardware solutions</p>
+                    </div>
+                    <div class="company-category animate-on-scroll">
+                        <div class="category-icon">🏢</div>
+                        <h3>Professional Services</h3>
+                        <p>Consulting, legal services, financial advisory, and business process solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="section">
-      <h2>Your Benefits</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🛡️ Digital Trust Passport</h3>
-          <p>Show EU buyers that you're verified and reliable.</p>
+        <!-- Interview Section -->
+        <section class="section interview-section" id="interview">
+            <div class="container">
+                <div class="interview-content">
+                    <div class="animate-on-scroll">
+                        <h2 class="section-title" style="text-align: left; color: white;">Share Your Experience in 15-Minute Interview</h2>
+                        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Help us understand the real challenges of European market entry while getting valuable insights for your business.</p>
+                        
+                        <ul class="interview-features">
+                            <li>
+                                <div class="feature-icon">⏱️</div>
+                                <div>
+                                    <strong>Quick & Efficient</strong><br>
+                                    Only 15 minutes of your time via video call
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">🎯</div>
+                                <div>
+                                    <strong>Personalized Insights</strong><br>
+                                    Get tailored recommendations for your market
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">🤝</div>
+                                <div>
+                                    <strong>Confidential & Secure</strong><br>
+                                    Your data is protected and anonymized
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">📊</div>
+                                <div>
+                                    <strong>Research Results</strong><br>
+                                    Access to final study findings and benchmarks
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; text-align: center;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">What we'll discuss:</h3>
+                            <div style="display: grid; gap: 15px; text-align: left;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: #667eea;">✓</span>
+                                    <span>Your European expansion goals and timeline</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: #667eea;">✓</span>
+                                    <span>Biggest challenges you've encountered</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: #667eea;">✓</span>
+                                    <span>Successful strategies and lessons learned</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: #667eea;">✓</span>
+                                    <span>Resources and support you need most</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="section form-section" id="contact">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Schedule Your Interview</h2>
+                <p class="section-subtitle animate-on-scroll">Book your 15-minute interview and contribute to groundbreaking research on European market entry</p>
+                
+                <div class="form-container animate-on-scroll">
+                    <form id="interviewForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" id="firstName" class="form-input" placeholder=" " required>
+                                <label for="firstName" class="form-label">First Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" class="form-input" placeholder=" " required>
+                                <label for="lastName" class="form-label">Last Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-input" placeholder=" " required>
+                                <label for="email" class="form-label">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" class="form-input" placeholder=" ">
+                                <label for="phone" class="form-label">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="company" class="form-input" placeholder=" " required>
+                                <label for="company" class="form-label">Company Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="position" class="form-input" placeholder=" " required>
+                                <label for="position" class="form-label">Your Position</label>
+                            </div>
+                            <div class="form-group full-width">
+                                <select id="industry" class="form-select" required>
+                                    <option value="">Select your industry</option>
+                                    <option value="healthcare">Healthcare & Medical Devices</option>
+                                    <option value="manufacturing">Manufacturing & Industrial</option>
+                                    <option value="technology">Technology & Software</option>
+                                    <option value="energy">Energy & Sustainability</option>
+                                    <option value="electronics">Consumer Electronics</option>
+                                    <option value="services">Professional Services</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="industry" class="form-label">Industry</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="companySize" class="form-select" required>
+                                    <option value="">Select company size</option>
+                                    <option value="startup">Startup (1-10 employees)</option>
+                                    <option value="small">Small (11-50 employees)</option>
+                                    <option value="medium">Medium (51-200 employees)</option>
+                                    <option value="large">Large (200+ employees)</option>
+                                </select>
+                                <label for="companySize" class="form-label">Company Size</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="marketStage" class="form-select" required>
+                                    <option value="">Market entry stage</option>
+                                    <option value="planning">Planning to enter</option>
+                                    <option value="researching">Currently researching</option>
+                                    <option value="entering">In the process of entering</option>
+                                    <option value="established">Already established</option>
+                                </select>
+                                <label for="marketStage" class="form-label">European Market Stage</label>
+                            </div>
+                            <div class="form-group full-width">
+                                <textarea id="challenges" class="form-textarea" placeholder=" "></textarea>
+                                <label for="challenges" class="form-label">What are your main challenges with European market entry? (Optional)</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="margin-bottom: 20px; color: #333;">Preferred Interview Time:</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" name="timeSlot" value="morning" style="width: 18px; height: 18px;">
+                                    <span>Morning (9:00-12:00 CET)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" name="timeSlot" value="afternoon" style="width: 18px; height: 18px;">
+                                    <span>Afternoon (12:00-17:00 CET)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" name="timeSlot" value="evening" style="width: 18px; height: 18px;">
+                                    <span>Evening (17:00-20:00 CET)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, #f0f7ff, #e8f4f8); border-radius: 15px; padding: 25px; margin-bottom: 30px; border-left: 4px solid #667eea;">
+                            <h4 style="color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.5rem;">🎁</span>
+                                What You'll Receive:
+                            </h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <span style="color: #667eea; font-weight: bold;">✓</span>
+                                    <span>Personalized market entry recommendations</span>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <span style="color: #667eea; font-weight: bold;">✓</span>
+                                    <span>Access to final research report with industry benchmarks</span>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <span style="color: #667eea; font-weight: bold;">✓</span>
+                                    <span>Network connection opportunities with other participants</span>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="color: #667eea; font-weight: bold;">✓</span>
+                                    <span>Priority access to future European market insights</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            📅 Schedule My Interview Now
+                        </button>
+
+                        <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9rem;">
+                            🔒 Your information is secure and will only be used for research purposes. 
+                            We'll contact you within 24 hours to confirm your interview slot.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Promise Section -->
+        <section class="section" style="background: linear-gradient(135deg, #f8f9ff, #fff); text-align: center;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;" class="animate-on-scroll">
+                    <h2 class="section-title">Our Research Promise</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px;">
+                        <div style="padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div style="font-size: 3rem; margin-bottom: 15px;">🎯</div>
+                            <h4>Actionable Insights</h4>
+                            <p style="color: #666;">Every participant receives personalized recommendations based on their specific situation and goals.</p>
+                        </div>
+                        <div style="padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div style="font-size: 3rem; margin-bottom: 15px;">🤝</div>
+                            <h4>Confidential Process</h4>
+                            <p style="color: #666;">All interviews are confidential, and company-specific information is anonymized in our research.</p>
+                        </div>
+                        <div style="padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
+                            <h4>Industry Benchmarks</h4>
+                            <p style="color: #666;">Compare your challenges and strategies against industry peers and successful market entrants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Research Section -->
+        <section class="section" style="background: linear-gradient(135deg, #1a1a2e, #16213e); color: white;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                    <div class="animate-on-scroll">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 30px;">About the Research</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; color: rgba(255,255,255,0.9);">
+                            This comprehensive study aims to identify and address the most significant barriers companies face when entering European markets. Our research will help create better resources, tools, and support systems for future market entrants.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 15px; padding: 25px;">
+                            <h4 style="margin-bottom: 15px;">Research Timeline:</h4>
+                            <div style="display: grid; gap: 10px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
+                                    <span>Interviews: December 2024 - February 2025</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">2</div>
+                                    <span>Analysis & Report: March 2025</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">3</div>
+                                    <span>Results Sharing: April 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll" style="text-align: center;">
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 50px 40px;">
+                            <h3 style="font-size: 2rem; margin-bottom: 30px;">Join 500+ Companies</h3>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2.5rem; font-weight: 800; color: #667eea;">95%</div>
+                                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Found insights valuable</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2.5rem; font-weight: 800; color: #667eea;">4.8/5</div>
+                                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Average rating</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2.5rem; font-weight: 800; color: #667eea;">73%</div>
+                                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Implemented recommendations</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2.5rem; font-weight: 800; color: #667eea;">2x</div>
+                                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Faster market entry</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a2e; color: white; padding: 50px 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h4 style="margin-bottom: 20px;">Contact</h4>
+                    <p>📧 research@euromarketentry.com</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 20px;">Privacy</h4>
+                    <p>🔒 All interviews are confidential</p>
+                    <p>📊 Data is anonymized and secure</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 20px;">Follow Up</h4>
+                    <p>⏱️ 24-hour response time</p>
+                    <p>📅 Flexible scheduling available</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">
+                <p>&copy; 2024 European Market Entry Research Study. All rights reserved.</p>
+            </div>
         </div>
-        <div class="card">
-          <h3>🎬 Multimedia Profiles</h3>
-          <p>Photos, video, and certifications to build confidence instantly.</p>
-        </div>
-        <div class="card">
-          <h3>🔍 AI-Based Buyer Matching</h3>
-          <p>Only receive leads that match your capabilities and goals.</p>
-        </div>
-        <div class="card">
-          <h3>💬 Secure Deal Rooms</h3>
-          <p>Negotiate and close in a safe, encrypted environment.</p>
-        </div>
-        <div class="card">
-          <h3>📦 Trade Console</h3>
-          <p>Logistics, contracts, payments, and financing in one dashboard.</p>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="highlight-banner">
-      <h3>🌍 Built for Cross-Border Success</h3>
-      <p>No EU office required. Partnex gives you visibility where it matters.</p>
-    </section>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-    <section class="section">
-      <h2>How to Start</h2>
-      <ol>
-        <li>Sign up and complete a 10-minute onboarding profile</li>
-        <li>Submit certifications and pass KYB/ESG screening</li>
-        <li>Go live as a Trusted Supplier and start closing deals</li>
-      </ol>
-    </section>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <section class="section">
-      <h2>🎁 Early Access Benefits</h2>
-      <ul>
-        <li>🎉 Free onboarding verification package</li>
-        <li>📣 Featured listing in marketplace</li>
-        <li>👤 Dedicated manager support (30 days)</li>
-      </ul>
-    </section>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
 
-    <section class="infographic-section">
-      <h2>📊 Time & Risk Reduction with Partnex</h2>
-      <img src="https://via.placeholder.com/960x540.png?text=Time+%26+Risk+Infographic" alt="Infographic showing time savings and risk reduction with Partnex">
-    </section>
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
 
-    <div class="cta">
-      <h2>Book a Call to Join Early Access</h2>
-      <p>Help shape Partnex with your feedback and secure your spot before launch.</p>
-      <button onclick="window.location.href='https://forms.gle/your-google-form-link'">Book Interview</button>
-    </div>
-  </main>
+        // Form handling
+        document.getElementById('interviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Get selected time slots
+            const timeSlots = [];
+            document.querySelectorAll('input[name="timeSlot"]:checked').forEach(checkbox => {
+                timeSlots.push(checkbox.value);
+            });
+            data.timeSlots = timeSlots;
 
-  <footer>
-    &copy; 2025 Partnex. Connecting verified suppliers to Europe — securely, sustainably, and smartly.
-  </footer>
+            // Simulate form submission
+            const submitButton = document.querySelector('.submit-button');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.innerHTML = '⏳ Scheduling Interview...';
+            submitButton.style.background = '#95a5a6';
+            submitButton.disabled = true;
+
+            setTimeout(() => {
+                submitButton.innerHTML = '✅ Interview Scheduled Successfully!';
+                submitButton.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.style.cssText = `
+                    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+                    border: 2px solid #28a745;
+                    border-radius: 15px;
+                    padding: 25px;
+                    margin-top: 25px;
+                    text-align: center;
+                    animation: fadeInUp 0.5s ease;
+                `;
+                successMessage.innerHTML = `
+                    <h4 style="color: #155724; margin-bottom: 10px;">🎉 Thank You for Signing Up!</h4>
+                    <p style="color: #155724; margin: 0;">We'll contact you within 24 hours to confirm your interview slot. Check your email for confirmation details.</p>
+                `;
+                
+                document.querySelector('.form-container').appendChild(successMessage);
+                
+                // Reset form after a delay
+                setTimeout(() => {
+                    this.reset();
+                    submitButton.innerHTML = originalText;
+                    submitButton.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    submitButton.disabled = false;
+                    successMessage.remove();
+                }, 5000);
+            }, 2000);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Add floating animation to stats
+        document.querySelectorAll('.stat-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Enhanced form validation
+        const inputs = document.querySelectorAll('.form-input, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.add('filled');
+                } else {
+                    this.classList.remove('filled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
