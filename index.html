@@ -173,26 +173,28 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #a8e6cf, #88d8a3);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
             animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            color: white;
+            color: #2c5530;
             display: block;
         }
 
         .stat-label {
-            color: rgba(255, 255, 255, 0.8);
+            color: #4a7c59;
             font-size: 0.9rem;
             margin-top: 5px;
+            font-weight: 500;
         }
 
         /* Main Content */
@@ -264,14 +266,14 @@
         .challenge-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #a8e6cf, #88d8a3);
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: white;
+            color: #2c5530;
         }
 
         .challenge-card h3 {
@@ -316,14 +318,14 @@
         .category-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #a8e6cf, #88d8a3);
             border-radius: 50%;
             margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
-            color: white;
+            color: #2c5530;
         }
 
         /* Interview Section */
@@ -358,12 +360,13 @@
         .feature-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #a8e6cf, #88d8a3);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            color: #2c5530;
         }
 
         /* Form Section */
@@ -545,6 +548,11 @@
             .nav-links {
                 display: none;
             }
+
+            /* Research Promise section mobile */
+            .animate-on-scroll div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         @media (max-width: 768px) {
@@ -585,7 +593,7 @@
                 <li><a href="#challenges">Challenges</a></li>
                 <li><a href="#companies">Companies</a></li>
                 <li><a href="#interview">Interview</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#form-section">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -742,24 +750,24 @@
                         </ul>
                     </div>
                     <div class="animate-on-scroll">
-                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; text-align: center;">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">What we'll discuss:</h3>
+                        <div style="background: linear-gradient(135deg, #a8e6cf, #88d8a3); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #2c5530;">What we'll discuss:</h3>
                             <div style="display: grid; gap: 15px; text-align: left;">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="color: #667eea;">✓</span>
-                                    <span>Your European expansion goals and timeline</span>
+                                    <span style="color: #2c5530; font-weight: bold;">✓</span>
+                                    <span style="color: #4a7c59;">Your European expansion goals and timeline</span>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="color: #667eea;">✓</span>
-                                    <span>Biggest challenges you've encountered</span>
+                                    <span style="color: #2c5530; font-weight: bold;">✓</span>
+                                    <span style="color: #4a7c59;">Biggest challenges you've encountered</span>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="color: #667eea;">✓</span>
-                                    <span>Successful strategies and lessons learned</span>
+                                    <span style="color: #2c5530; font-weight: bold;">✓</span>
+                                    <span style="color: #4a7c59;">Successful strategies and lessons learned</span>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="color: #667eea;">✓</span>
-                                    <span>Resources and support you need most</span>
+                                    <span style="color: #2c5530; font-weight: bold;">✓</span>
+                                    <span style="color: #4a7c59;">Resources and support you need most</span>
                                 </div>
                             </div>
                         </div>
@@ -931,20 +939,20 @@
                         <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; color: rgba(255,255,255,0.9);">
                             This comprehensive study aims to identify and address the most significant barriers companies face when entering European markets. Our research will help create better resources, tools, and support systems for future market entrants.
                         </p>
-                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 15px; padding: 25px;">
-                            <h4 style="margin-bottom: 15px;">Research Timeline:</h4>
+                        <div style="background: linear-gradient(135deg, #a8e6cf, #88d8a3); backdrop-filter: blur(20px); border-radius: 15px; padding: 25px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);">
+                            <h4 style="margin-bottom: 15px; color: #2c5530;">Research Timeline:</h4>
                             <div style="display: grid; gap: 10px;">
                                 <div style="display: flex; align-items: center; gap: 15px;">
-                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
-                                    <span>Interviews: December 2024 - February 2025</span>
+                                    <div style="width: 30px; height: 30px; background: #2c5530; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #a8e6cf;">1</div>
+                                    <span style="color: #4a7c59;">Interviews: December 2024 - February 2025</span>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 15px;">
-                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">2</div>
-                                    <span>Analysis & Report: March 2025</span>
+                                    <div style="width: 30px; height: 30px; background: #2c5530; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #a8e6cf;">2</div>
+                                    <span style="color: #4a7c59;">Analysis & Report: March 2025</span>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 15px;">
-                                    <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">3</div>
-                                    <span>Results Sharing: April 2025</span>
+                                    <div style="width: 30px; height: 30px; background: #2c5530; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #a8e6cf;">3</div>
+                                    <span style="color: #4a7c59;">Results Sharing: April 2025</span>
                                 </div>
                             </div>
                         </div>
